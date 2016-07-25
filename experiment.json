@@ -1,0 +1,78 @@
+{
+  "experiment": "CRT1",
+  "fullscreen": true,
+  "sections": [
+    {
+      "name": "heuristics",
+      "subsections": [
+        "introduction",
+        "instructions",
+        {
+          "name": "heuristic_question",
+          "data": "heuristics",
+          "order": "random:dependent",
+          "constraints": {
+            "heuristic_response": {
+              "type": "match-value",
+              "value": "data.answer"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "crts",
+      "subsections": [
+        "instructions",
+        {
+          "name": "crt_question",
+          "data": "crts",
+          "order": "random:dependent",
+          "constraints": {
+            "crt_response": {
+              "type": "match-value",
+              "value": "data.answer"
+            }
+          }
+        },
+        "finish"
+      ]
+    }
+  ],
+  "data": {
+    "heuristics": [
+      {
+        "question": "What is your question?",
+        "answer": "chewbacca",
+        "timeout": 15000,
+        "timeout_hr": "15s"
+      },
+      {
+        "question": "What is your question?",
+        "answers": [
+          "202 C",
+          "402 C",
+          "1011 C",
+          "98 C"
+        ],
+        "correct": 2,
+        "timeout": 15000,
+        "timeout_hr": "15 seconds"
+      }
+    ],
+    "crts": [
+      {
+        "question": "What is your question (47)?",
+        "answer": 47
+      },
+      {
+        "question": "What is your question (105)?",
+        "answer": 105
+      },
+      {
+        "question": "What is your question (106)?",
+        "answer": 106
+      }
+    ]
+  }
+}
